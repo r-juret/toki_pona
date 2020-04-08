@@ -1,0 +1,3 @@
+https://github.com/chrisbanes/PhotoView
+
+https://github.com/MikeOrtiz/TouchImageView
