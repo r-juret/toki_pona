@@ -1,4 +1,5 @@
-#Android toki pona renderer
+Android toki pona renderer
+===============
 ##Introduction
 ###Toki pona
 Toki pona is a philosophical language known for its small vocabulary. It has been created by Sonja Lang a Canadian linguist in 2001.
