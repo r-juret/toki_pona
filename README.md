@@ -21,7 +21,8 @@ On this repository you can find :
 You find all the images in the java library : /java_project/ressources
 And for the Android project all the images are already include
 ### Jar 
-The jar library as been compiled with Java 1.8.
+The jar library has been compiled with Java 1.8.
+
 With the jar file, you have to use the class PhraseDetection, this is a static class. You first have to use the setPaths(String db, String res).
 * db: The path to the folder which contains the image database in which a folder "glyphs" must be present, in the glyphs folder, the folders "containers" and "words" must be present. Currently we don't use the ponctuation and the syllabes in our project.
 * results: the path where you want the results to be created. It will creates 2 folders : 
