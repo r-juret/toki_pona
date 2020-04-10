@@ -1,6 +1,7 @@
 package com.example.toki_pona;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         adapt = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_dropdown_item_1line, exemple);
         texteToki.setAdapter(adapt);
         texteToki.setThreshold(1);
-
+        texteToki.setDropDownBackgroundResource(R.color.colorGris);
         pathExtra = getResources().getString(R.string.exemple);
         base_url = getFilesDir().toString(); // the directory where results and svg images will be stored
 

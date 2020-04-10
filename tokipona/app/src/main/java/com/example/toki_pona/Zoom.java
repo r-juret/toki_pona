@@ -44,14 +44,7 @@ public class Zoom extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        findViewById(R.id.buttonBack).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-        findViewById(R.id.buttonSave).setOnClickListener(new View.OnClickListener() {
+        /*findViewById(R.id.buttonSave).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //to get the image from the ImageView (say iv)
@@ -79,15 +72,15 @@ public class Zoom extends AppCompatActivity {
                 sendBroadcast(intent);
                 Toast.makeText(Zoom.this, "Image enregistré dans la gallerie", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
     }
 
-    public Bitmap convertToBitmap(Drawable drawable, int widthPixels, int heightPixels) {
+    /*public Bitmap convertToBitmap(Drawable drawable, int widthPixels, int heightPixels) {
         Bitmap mutableBitmap = Bitmap.createBitmap(widthPixels, heightPixels, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(mutableBitmap);
         drawable.setBounds(0, 0, widthPixels, heightPixels);
         drawable.draw(canvas);
 
         return mutableBitmap;
-    }
+    }*/
 }
