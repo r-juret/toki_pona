@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -30,13 +31,12 @@ import modele.PhraseDetection;
 public class MainActivity extends AppCompatActivity {
 
     private Button bout;
-    private EditText texteToki;
+    private AutoCompleteTextView texteToki;
     private ImageView imgV;
-    private Spinner spinner;
 
     private ArrayAdapter<String> adapt;
 
-    private List<String> exemple;
+    private String[] exemple;
     BufferedReader buf;
 
     public static String pathExtra;
@@ -53,38 +53,27 @@ public class MainActivity extends AppCompatActivity {
 
         imgV = findViewById(R.id.imageView);
         bout = findViewById(R.id.button);
-        texteToki = findViewById(R.id.editText);
-        spinner = findViewById(R.id.spinner2);
+        texteToki = findViewById(R.id.autoCompleteTextView2);
 
-        exemple = new ArrayList<>();
-
-        exemple.add("sina e moku");
-        exemple.add("ken la jan lili li wile moku e telo");
-        exemple.add("tenpo ali la o kama sona");
-        exemple.add("sina sona e toki ni la sina sona e toki pona");
-        exemple.add("moku li pona");
-        exemple.add("jan li wile jo e ma");
-        exemple.add("jan lawa li moku e telo jaki");
+        exemple = new String[]{"sina e moku", "ken la jan lili li wile moku e telo",
+                "tenpo ali la o kama sona", "sina sona e toki ni la sina sona e toki pona",
+                "moku li pona", "jan li wile jo e ma", "jan lawa li moku e telo jaki"
+        };
 
 
         adapt = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_dropdown_item_1line, exemple);
-        spinner.setAdapter(adapt);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                texteToki.setText(exemple.get(position));
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-
-            }
-
-        });
+        texteToki.setAdapter(adapt);
+        texteToki.setThreshold(1);
 
         pathExtra = getResources().getString(R.string.exemple);
         base_url = getFilesDir().toString(); // the directory where results and svg images will be stored
+
+        texteToki.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                texteToki.showDropDown(); // to show the dropdown even if 0 character is entered
+            }
+        });
 
         if (PhraseDetection.getPathBD() == null){
             Toast.makeText(MainActivity.this,"debut de chargement des données", Toast.LENGTH_SHORT).show();
