@@ -26,7 +26,7 @@ With the jar file, you have to use the class PhraseDetection, this is a static c
 
 Once you set the paths, you can use the method draw(String sentence). This is the main method of our class. It will translate the sentence and will return the path to the svg file created (int the folder "results" that you set previously).
 
-You can see more detail about our algorithm in the Java project.
+Requirement : You are free to use our jar to your projects but you must have the SVG file for every word of toki pona.
 ### Java project 
 On the Java project you will can see our algorithm and how they are working. (The most part of the description is in French).
 ### Android project
